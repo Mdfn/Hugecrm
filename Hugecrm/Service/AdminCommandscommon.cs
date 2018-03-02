@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hugecrm.Service
 {
+    /// <summary>
+    /// Моё мега крутое изменение в исходном коде :)
+    /// </summary>
     class AdminCommandscommon:ICommandLineInterface
     {
      public Dictionary<string, IAdminCommands> admindic = new Dictionary<string, IAdminCommands>();
@@ -21,7 +24,6 @@ namespace Hugecrm.Service
             admindic.Add("create user", createuser);
             admindic.Add("delete user", deleteuser);
             admindic.Add("create command", createcommand);
-
         }
 
 

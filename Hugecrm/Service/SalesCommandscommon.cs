@@ -9,13 +9,24 @@ namespace Hugecrm.Service
     class SalesCommandscommon:ICommandLineInterface
 
     {
-        Dictionary<string, SalesCommandscommon> salesdic = new Dictionary<string, SalesCommandscommon>();
+        Dictionary<string, ISalesCommands> salesdic = new Dictionary<string, ISalesCommands>();
         public void Dictfilling()
         {
-            SalesCommandscommon needsomepersonalclaassandcommand = new SalesCommandscommon();
-            SalesCommandscommon needsomepersonalclaassandcommand2 = new SalesCommandscommon();
-            salesdic.Add("somecommand", needsomepersonalclaassandcommand);
-            salesdic.Add("somecommand2", needsomepersonalclaassandcommand2);
+            SalesCommandsCreateCustomer createCustomer = new SalesCommandsCreateCustomer();
+            SalesCommandsDeleteCustomer deleteCustomer= new SalesCommandsDeleteCustomer();
+            SalesCommandsCreateProduct createProduct = new SalesCommandsCreateProduct();
+            SalesCommandsDeleteProduct deleteproduct = new SalesCommandsDeleteProduct();
+            SalesCommandsChangeProduct changeProduct = new SalesCommandsChangeProduct();
+
+
+            salesdic.Add("create customer", createCustomer);
+            salesdic.Add("delete customer", deleteCustomer);
+            salesdic.Add("create product", createProduct);
+            salesdic.Add("delete product", deleteproduct);
+            salesdic.Add("change product", changeProduct);
+
+
+
         }
 
         public void PrintCommands()
@@ -26,9 +37,16 @@ namespace Hugecrm.Service
             }
 
         }
-        public void ExecuteCommands(string commands)
+        public void ExecuteCommands(string command)
         {
+            foreach (string key in salesdic.Keys)
+            {
+                if (command == key)
+                {
+                    salesdic[key].CommandsRealization();            
+                }
 
+            }
 
         }
 

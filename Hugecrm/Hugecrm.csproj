@@ -53,6 +53,7 @@
     <Compile Include="Data\CrmContext.cs" />
     <Compile Include="Data\CrmContextConfiguration.cs" />
     <Compile Include="Data\Customer.cs" />
+    <Compile Include="Data\Product.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,12 +61,16 @@
     <Compile Include="Service\AdminCommandsCreateUser.cs" />
     <Compile Include="Service\AdmincommandsCreateCommand.cs" />
     <Compile Include="Service\AdminCommandsDeleteUser.cs" />
+    <Compile Include="Service\SalesCommandsChangeProduct.cs" />
+    <Compile Include="Service\SalesCommandsCreateProduct.cs" />
+    <Compile Include="Service\SalesCommandsDeleteCustomer.cs" />
     <Compile Include="Service\SalesCommandsCreateCustomer.cs" />
     <Compile Include="Service\IAdminCommands.cs" />
     <Compile Include="Service\ICommandLineInterface.cs" />
     <Compile Include="Service\ISalesCommands.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\SalesCommandscommon.cs" />
+    <Compile Include="Service\SalesCommandsDeleteProduct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

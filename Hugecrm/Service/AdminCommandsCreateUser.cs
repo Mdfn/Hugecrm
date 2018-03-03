@@ -10,7 +10,7 @@ namespace Hugecrm.Service
 {
     class AdminCommandsCreateUser :IAdminCommands
     {
-        public void CommandsRealization(AdminCommandscommon command)
+        public void CommandsRealization(/*AdminCommandscommon command*/)
         {
 
             Console.WriteLine("введите права доступа создаваемого пользователя(true=admin false=sales)");

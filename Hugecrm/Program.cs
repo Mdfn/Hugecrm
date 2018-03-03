@@ -18,7 +18,7 @@ namespace Hugecrm
             bool condition = true;
 
             ICommandLineInterface CLI;
-            SalesCommandscommon sls = new SalesCommandscommon();
+            //SalesCommandscommon sls = new SalesCommandscommon();
 
             LoginService Ls = new LoginService();
             User Usr = Ls.LogIndatabase();

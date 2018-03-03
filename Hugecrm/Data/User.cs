@@ -23,5 +23,6 @@ namespace Hugecrm.Data
         }
         public User()
         { }
+
     }
 }

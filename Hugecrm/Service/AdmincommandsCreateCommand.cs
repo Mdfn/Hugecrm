@@ -8,7 +8,7 @@ namespace Hugecrm.Service
 {
     class AdmincommandsCreateCommand:IAdminCommands
     {
-        public void CommandsRealization(AdminCommandscommon command)
+        public void CommandsRealization(/*AdminCommandscommon command*/)
         {
 
 

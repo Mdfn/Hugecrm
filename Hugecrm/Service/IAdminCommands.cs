@@ -8,7 +8,7 @@ namespace Hugecrm.Service
 {
     interface IAdminCommands
     {
-        void CommandsRealization(AdminCommandscommon command);
+        void CommandsRealization(/*AdminCommandscommon command*/);
         
     }
 }

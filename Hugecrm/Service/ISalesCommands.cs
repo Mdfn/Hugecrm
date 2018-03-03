@@ -8,7 +8,7 @@ namespace Hugecrm.Service
 {
     interface ISalesCommands
     {
-        void CommandsRealization(SalesCommandscommon command);
+        void CommandsRealization(/*SalesCommandscommon command*/);
 
     }
 }

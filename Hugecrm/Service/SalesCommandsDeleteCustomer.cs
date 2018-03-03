@@ -13,9 +13,13 @@ namespace Hugecrm.Service
             CrmContext DeletingCustomer = new CrmContext();
             Console.WriteLine("введите Id удаляемого клиента");
             int IdDel = Convert.ToInt32(Console.ReadLine());
-            var SalesCommandsDeleteCustomer = DeletingCustomer.Customers.First(qua => qua.Id == IdDel);
-            DeletingCustomer.Customers.Remove(SalesCommandsDeleteCustomer);
-            DeletingCustomer.SaveChanges();
+            var SalesCommandsDeleteCustomer = DeletingCustomer.Customers.FirstOrDefault(qua => qua.Id == IdDel);
+            if (SalesCommandsDeleteCustomer != null)
+            {
+                DeletingCustomer.Customers.Remove(SalesCommandsDeleteCustomer);
+                DeletingCustomer.SaveChanges();
+            }
+            else Console.WriteLine("не существует такого логина");
 
         }
     }

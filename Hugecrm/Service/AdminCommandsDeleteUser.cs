@@ -15,10 +15,15 @@ namespace Hugecrm.Service
             CrmContext Deletingcommand = new CrmContext();
             Console.WriteLine ("введите логин пользователя , подлежащего удалению");
             string dellogin = Console.ReadLine();
-          var quarr = Deletingcommand.Users.First(qua=>qua.Login.Equals(dellogin));
-
-            //Deletingcommand.Users.Remove(quarr);
-            //Deletingcommand.SaveChanges();
+               var usertodelete = Deletingcommand.Users.FirstOrDefault(qua => qua.Login.Equals(dellogin));
+            if (usertodelete != null)
+            {
+                Deletingcommand.Users.Remove(usertodelete);
+                Deletingcommand.SaveChanges();
+            }
+            else Console.WriteLine("такого логина не существует");
+            
+       
         }
 
 

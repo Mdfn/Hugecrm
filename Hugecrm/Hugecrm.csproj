@@ -53,6 +53,7 @@
     <Compile Include="Data\CrmContext.cs" />
     <Compile Include="Data\CrmContextConfiguration.cs" />
     <Compile Include="Data\Customer.cs" />
+    <Compile Include="Data\Order.cs" />
     <Compile Include="Data\Product.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Program.cs" />

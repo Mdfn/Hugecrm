@@ -16,19 +16,29 @@ namespace Hugecrm.Service
             Console.WriteLine("какое поле меняем у продукта, подлежащего корректировке(true=type,false=price)?");
             bool  polekor = Convert.ToBoolean(Console.ReadLine());
             CrmContext changeproduct = new CrmContext();
-            var prodtochange = changeproduct.Products.First(qua => qua.Id == changeproductId);
-            if (polekor)
+            try
             {
-                string prodchvalue = Console.ReadLine();
-                prodtochange.ProductType = prodchvalue;
+                var prodtochange = changeproduct.Products.First(qua => qua.Id == changeproductId);
+                if (polekor)
+                {
+                    string prodchvalue = Console.ReadLine();
+                    prodtochange.ProductType = prodchvalue;
+                }
+                else
+                {
+                    decimal prodchvalue = Convert.ToDecimal(Console.ReadLine());
+                    prodtochange.Price = prodchvalue;
+                }
+                changeproduct.SaveChanges();
             }
-            else
+            catch (Exception e)
             {
-                decimal prodchvalue = Convert.ToDecimal(Console.ReadLine());
-                prodtochange.Price = prodchvalue;
+                string err = ("последовательность не содержит запрос");
+                if (err == e.Message) Console.WriteLine("логин отсутствует :(");
+                else Console.WriteLine("возникла некая ошибка");
+
             }
-            changeproduct.SaveChanges();
         }
     }
-
+    
 }

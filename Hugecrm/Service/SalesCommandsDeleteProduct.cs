@@ -14,9 +14,14 @@ namespace Hugecrm.Service
             CrmContext deletingproduct = new CrmContext();
             Console.WriteLine("введите Id продукта для удаления");
             int delprodid = Convert.ToInt32(Console.ReadLine());
-            var delquar = deletingproduct.Products.First(quar => quar.Id == delprodid);
-            deletingproduct.Products.Remove(delquar);
-            deletingproduct.SaveChanges();
+            var delquar = deletingproduct.Products.FirstOrDefault(quar => quar.Id == delprodid);
+            if (delquar != null)
+            {
+                deletingproduct.Products.Remove(delquar);
+                deletingproduct.SaveChanges();
+            }
+            else Console.WriteLine("введен невалидный Id");
+
         }
 
     }

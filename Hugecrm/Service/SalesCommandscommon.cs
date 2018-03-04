@@ -17,14 +17,14 @@ namespace Hugecrm.Service
             SalesCommandsCreateProduct createProduct = new SalesCommandsCreateProduct();
             SalesCommandsDeleteProduct deleteproduct = new SalesCommandsDeleteProduct();
             SalesCommandsChangeProduct changeProduct = new SalesCommandsChangeProduct();
-
+            SalesCommandsMakeOrder makeOrder = new SalesCommandsMakeOrder();
 
             salesdic.Add("create customer", createCustomer);
             salesdic.Add("delete customer", deleteCustomer);
             salesdic.Add("create product", createProduct);
             salesdic.Add("delete product", deleteproduct);
             salesdic.Add("change product", changeProduct);
-
+            salesdic.Add("make order", makeOrder);
 
 
         }

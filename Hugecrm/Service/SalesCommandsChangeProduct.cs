@@ -12,13 +12,14 @@ namespace Hugecrm.Service
         public void CommandsRealization()
         {
             Console.WriteLine("введите Id продукта, подлежащего корректировке");
-                var changeproductId = Convert.ToInt32(Console.ReadLine());
+            var changeproductId = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("какое поле меняем у продукта, подлежащего корректировке(true=type,false=price)?");
             bool  polekor = Convert.ToBoolean(Console.ReadLine());
             CrmContext changeproduct = new CrmContext();
-            try
+            
+            var prodtochange = changeproduct.Products.FirstOrDefault(qua => qua.Id == changeproductId);
+            if (prodtochange != null)
             {
-                var prodtochange = changeproduct.Products.First(qua => qua.Id == changeproductId);
                 if (polekor)
                 {
                     string prodchvalue = Console.ReadLine();
@@ -31,13 +32,8 @@ namespace Hugecrm.Service
                 }
                 changeproduct.SaveChanges();
             }
-            catch (Exception e)
-            {
-                string err = ("последовательность не содержит запрос");
-                if (err == e.Message) Console.WriteLine("логин отсутствует :(");
-                else Console.WriteLine("возникла некая ошибка");
-
-            }
+            else Console.WriteLine("Id отсутствует");
+            
         }
     }
     

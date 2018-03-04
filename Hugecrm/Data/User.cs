@@ -4,7 +4,7 @@ namespace Hugecrm.Data
 {
     public class User
     {
-        public Boolean Root { get; set; }
+        public string Root { get; set; }
 
         public String Name { get; set; }
 
@@ -14,7 +14,7 @@ namespace Hugecrm.Data
 
         public String Password { get; set; }
 
-        public User(bool root, string name, string login, string password)
+        public User(string root, string name, string login, string password)
         {
             Root = root;
             Name = name;

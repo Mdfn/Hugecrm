@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hugecrm.Data;
-
+using Hugecrm.Service;
 namespace Hugecrm.Service
 {
    public class LoginService

@@ -18,28 +18,46 @@ namespace Hugecrm
             bool condition = true;
 
             ICommandLineInterface CLI;
-            //SalesCommandscommon sls = new SalesCommandscommon();
 
             LoginService Ls = new LoginService();
             User Usr = Ls.LogIndatabase();
-            if (Usr.Root)
-                CLI = new AdminCommandscommon();
-            else CLI = new SalesCommandscommon();
-            CLI.Dictfilling();
-            do
+            Console.ReadKey();
+            if (Usr != null)
             {
-                CLI.PrintCommands();
-                Console.WriteLine("введите команду");
-                Console.WriteLine(CLI.GetType());
+                if (Usr.Root == "admin")
+                {
+                    CLI = new AdminCommandscommon();
+                }
+                else if (Usr.Root == "sales")
+                {
+                    CLI = new SalesCommandscommon();
+                }
+                else if (Usr.Root == "analyst")
+                {
+                    CLI = new AnalystCommandsCommon();
+                }
+                else
+                {
+                    Console.WriteLine("системная ошибка, обратитесь к администратору");
+                    CLI = null;
+                }
+                if (CLI != null) CLI.Dictfilling();
 
-                string command = Console.ReadLine();
-                if (command == "exit") condition = false;
-                else CLI.ExecuteCommands(command);
+                do
+                {
+
+                    CLI.PrintCommands();
+                    Console.WriteLine("введите команду");
+
+                    string command = Console.ReadLine();
+                    if (command == "exit") condition = false;
+                    else CLI.ExecuteCommands(command);
+                }
+                while (condition);
             }
-            while (condition);
 
-            //AdminCommandsDelete test = new AdminCommandsDelete();
-            //   test.CommandsRealization(adm);
+
+
             Console.ReadKey();
         }
     }

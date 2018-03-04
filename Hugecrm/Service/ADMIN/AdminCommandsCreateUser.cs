@@ -10,11 +10,17 @@ namespace Hugecrm.Service
 {
     class AdminCommandsCreateUser :IAdminCommands
     {
-        public void CommandsRealization(/*AdminCommandscommon command*/)
+        public Dictionary<string, string> roottypes = new Dictionary<string, string>();
+        
+        public void CommandsRealization()
         {
+            roottypes.Add("admin", "admin");
+            roottypes.Add("sales", "sales");
+            roottypes.Add("analyst", "analyst");
 
-            Console.WriteLine("введите права доступа создаваемого пользователя(true=admin false=sales)");
-            bool root = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("выберите права доступа создаваемого пользователя(введите admin,sales,analyst)");
+            string roottype = Console.ReadLine();
+            string root = roottypes[roottype];
 
             Console.WriteLine("Введите имя создаваемого пользователя");
             string name = Console.ReadLine();

@@ -12,15 +12,23 @@ namespace Hugecrm.Service
         Dictionary<string, IAnalystCommands> analdic = new Dictionary<string, IAnalystCommands>();
         public void PrintCommands()
         {
+
             foreach (string key in analdic.Keys)
             {
+            
                 Console.WriteLine(key);
             }
         }
         public void ExecuteCommands(string command)
         {
-            analdic[command].CommandsRealization();
-            
+            try
+            {
+                analdic[command].CommandsRealization();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
 

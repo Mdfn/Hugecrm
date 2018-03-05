@@ -14,10 +14,10 @@ namespace Hugecrm.Data
 
         public decimal Bill { get; set; }
         public Int32 CustomerId { get; set; }
-
+        public DateTime OrderDate { get; set; }
         public virtual Customer Customer { get; set; }
         public Int32 ProductId { get; set; }
-public virtual Product Product { get; set; }
+        public virtual Product Product { get; set; }
    
             public Order(int customerId, int productId,int amount)
             {

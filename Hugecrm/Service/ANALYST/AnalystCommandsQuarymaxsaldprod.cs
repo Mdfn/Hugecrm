@@ -10,38 +10,26 @@ namespace Hugecrm.Service.ANALYST
     {
         public void CommandsRealization()
         {
-            string[] formats = {"M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt",
-                "MM/dd/yyyy hh:mm:ss", "M/d/yyyy h:mm:ss",
-                "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt",
-                "M/d/yyyy h:mm", "M/d/yyyy h:mm",
-                "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm"};
-           
-            Console.WriteLine("введите дату ОТ");
-            string mindate = Console.ReadLine();
-            Console.WriteLine("введите дату ДО");
-            string maxdate = Console.ReadLine();
             DateTime sysmindate;
             DateTime sysmaxdate;
-            sysmindate = DateTime.Parse(mindate);
-            sysmaxdate = DateTime.Parse(maxdate);
+            OrgSystem.DT(out sysmindate, out sysmaxdate);
             CrmContext context = new CrmContext();
             var query = (from a in context.Orders
-                          join b in context.Products on a.ProductId equals b.Id
-                          orderby a.Amount descending
-                          where a.OrderDate < sysmaxdate && a.OrderDate > sysmindate
-                          select a.Amount).Take(5);
+                         where a.OrderDate < sysmaxdate && a.OrderDate > sysmindate
+                         group a by a.ProductId into grouppedProducts
+                         select new { ProductId = grouppedProducts.Key, Amount = grouppedProducts.Sum(_ => _.Amount)}).ToList().OrderByDescending(_ => _.Amount).Take(5);
 
             if (query != null)
             {
                 foreach (var qq in query)
 
                 {
-                    Console.WriteLine(qq);
+                    Console.WriteLine($"{qq.ProductId}==amount=={qq.Amount}");
                 }
             }
-            else Console.WriteLine("нет данных удовлетворяющих запросу");
+                         else Console.WriteLine("нет данных удовлетворяющих запросу");
 
-           
+
         }
 
     }

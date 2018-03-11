@@ -10,13 +10,14 @@ namespace Hugecrm.Service
 
     {
         Dictionary<string, IAnalystCommands> analdic = new Dictionary<string, IAnalystCommands>();
+        Dictionary<string, string> description = new Dictionary<string, string>();
         public void PrintCommands()
         {
 
-            foreach (string key in analdic.Keys)
+            foreach (string key in description.Keys)
             {
             
-                Console.WriteLine(key);
+                Console.WriteLine("{0},{1}",key,description[key]);
             }
         }
         public void ExecuteCommands(string command)
@@ -40,13 +41,19 @@ namespace Hugecrm.Service
             AnalystCommandsQuaryminprofitcust minprofitcust = new AnalystCommandsQuaryminprofitcust();
             AnalystCommandsQuarymaxprofitdprod maxprofitdprod = new AnalystCommandsQuarymaxprofitdprod();
             AnalystCommandsQuaryminprofitprod minprofitprod = new AnalystCommandsQuaryminprofitprod();
+            description.Add("show max saled product", "1");
+            description.Add("show min saled product", "2");
+            description.Add("show max profitable customer", "3");
+            description.Add("show min profitable customer", "4");
+            description.Add("max profitable product", "5");
+            description.Add("min profitable product", "6");
 
-            analdic.Add("show max saled product", maxsaldprod);
-            analdic.Add("show min saled product", minsaldprod);
-            analdic.Add("show max profitable customer", maxprofitcust);
-            analdic.Add("show min profitable customer", minprofitcust);
-            analdic.Add("max profitable product", maxprofitdprod);
-            analdic.Add("min profitable product", minprofitprod);
+            analdic.Add("1", maxsaldprod);
+            analdic.Add("2", minsaldprod);
+            analdic.Add("3", maxprofitcust);
+            analdic.Add("4", minprofitcust);
+            analdic.Add("5", maxprofitdprod);
+            analdic.Add("6", minprofitprod);
 
         }
     }

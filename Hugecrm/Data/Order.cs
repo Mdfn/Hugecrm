@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hugecrm.Data
 {
-   public class Order
-   {
+    public class Order
+    {
         public Int32 Id { get; set; }
 
         public int Amount { get; set; }
@@ -18,13 +18,16 @@ namespace Hugecrm.Data
         public virtual Customer Customer { get; set; }
         public Int32 ProductId { get; set; }
         public virtual Product Product { get; set; }
-   
-            public Order(int customerId, int productId,int amount)
-            {
+
+        public Order(int customerId, int productId, int amount, DateTime datetime)
+        {
             ProductId = productId;
             CustomerId = customerId;
             Amount = amount;
+            OrderDate = datetime;  
         }
+        public Order()
+        { }
 
 
    }

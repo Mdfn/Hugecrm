@@ -9,5 +9,6 @@ namespace Hugecrm.Data
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
+
     }
 }

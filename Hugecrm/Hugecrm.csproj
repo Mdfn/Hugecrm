@@ -70,6 +70,8 @@
     <Compile Include="Service\ANALYST\AnalystCommandsQuaryminprofitprod.cs" />
     <Compile Include="Service\ANALYST\AnalystCommandsCommon.cs" />
     <Compile Include="Service\ANALYST\IAnalystCommands.cs" />
+    <Compile Include="Service\OrgSystem.cs" />
+    <Compile Include="Service\SALES\SalesCommandsChangeorder.cs" />
     <Compile Include="Service\SALES\SalesCommandsChangeProduct.cs" />
     <Compile Include="Service\SALES\SalesCommandsCreateProduct.cs" />
     <Compile Include="Service\SALES\SalesCommandsDeleteCustomer.cs" />

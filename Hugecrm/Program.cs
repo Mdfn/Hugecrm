@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Hugecrm.Data;
+using Hugecrm.Service.SALES;
+using Hugecrm.Service.ANALYST;
 using Hugecrm.Service;
 
 namespace Hugecrm
@@ -56,7 +58,7 @@ namespace Hugecrm
                 while (condition);
             }
 
-            string task = "1) наиболее продаваемые продукты за интервал 2)наименее продаваемые продукты за интервал 3) какие клиенты приносят наибольшую прибыль за интервал " +
+            string task = "/*1) наиболее продаваемые продукты за интервал 2)наименее продаваемые продукты за интервал*/ 3) какие клиенты приносят наибольшую прибыль за интервал " +
                 "4)какие клиенты приносят наименьшую прибыль за интервал Да, и добавь ещё наиболее прибыльные и наименее прибыльные товары за интервал 5) наиболее прибыльные продукты за интервал 6" +
                 "6) наименее прибыльные продукты за интервал";
             Console.WriteLine(task);

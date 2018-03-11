@@ -19,5 +19,13 @@ namespace Hugecrm.Data
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<CrmContext>().
+        //        Property(p=>p.Orders)
+        //        .HasColumnType("datetime2")
+        //        .HasPrecision(0)
+        //        .IsRequired();
+        //}
     }
 }

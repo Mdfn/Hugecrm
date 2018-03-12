@@ -55,12 +55,13 @@
     <Compile Include="Data\Customer.cs" />
     <Compile Include="Data\Order.cs" />
     <Compile Include="Data\Product.cs" />
+    <Compile Include="Data\Region.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ADMIN\AdminCommandscommon.cs" />
     <Compile Include="Service\ADMIN\AdminCommandsCreateUser.cs" />
-    <Compile Include="Service\ADMIN\AdmincommandsCreateCommand.cs" />
+    <Compile Include="Service\ADMIN\AdmincommandsCreateRegion.cs" />
     <Compile Include="Service\ADMIN\AdminCommandsDeleteUser.cs" />
     <Compile Include="Service\ANALYST\AnalystCommandsQuarymaxsaldprod.cs" />
     <Compile Include="Service\ANALYST\AnalystCommandsQuaryminsaldprod.cs" />

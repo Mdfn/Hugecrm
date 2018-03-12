@@ -19,11 +19,11 @@ namespace Hugecrm.Service
         {
             AdminCommandsCreateUser createuser = new AdminCommandsCreateUser();
             AdminCommandsDeleteUser deleteuser = new AdminCommandsDeleteUser();
-            AdmincommandsCreateCommand createcommand = new AdmincommandsCreateCommand();
+            AdmincommandsCreateRegion createregion = new AdmincommandsCreateRegion();
 
             admindic.Add("create user", createuser);
             admindic.Add("delete user", deleteuser);
-            admindic.Add("create command", createcommand);
+            admindic.Add("create region", createregion);
         }
 
 
@@ -42,8 +42,7 @@ namespace Hugecrm.Service
             {
                 if (command == key)
                 {
-                    //AdminCommandscommon cmd = new AdminCommandscommon(); 
-                        admindic[key].CommandsRealization(/*cmd*/);
+                        admindic[key].CommandsRealization();
                 }
             }
 

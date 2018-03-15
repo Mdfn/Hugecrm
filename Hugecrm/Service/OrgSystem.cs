@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Hugecrm.Data;
+using Hugecrm.Service;
 namespace Hugecrm.Service
 {
    public static class OrgSystem
     {
+      public static List<Sale> saveusrsales = new List<Sale>();
         public static void DT(out DateTime first, out DateTime second)
         {
             string[] formats = {"M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt",
@@ -25,7 +27,6 @@ namespace Hugecrm.Service
             second = DateTime.Parse(maxdate);
 
         }
-
-
+        
     }
 }

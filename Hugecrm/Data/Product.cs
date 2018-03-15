@@ -10,7 +10,7 @@ namespace Hugecrm.Data
     {
         public string ProductType { get; set; }
         public decimal Price { get; set; }
-    public int Id { get; set; }
+        public Int32 Id { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
 
         public Product(string producttype,decimal price)

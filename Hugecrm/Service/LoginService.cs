@@ -7,16 +7,16 @@ using Hugecrm.Data;
 using Hugecrm.Service;
 namespace Hugecrm.Service
 {
-   public class LoginService
+    public class LoginService
     {
-        
-        public void Login(out string login,out string password)
+        public void Login(out string login, out string password)
         {
-            
+            //            Console.WriteLine( );
+
             Console.WriteLine("enter login");
-             
+
             login = Console.ReadLine();
-            
+
             Console.WriteLine("enter password");
 
             password = Console.ReadLine();
@@ -26,9 +26,8 @@ namespace Hugecrm.Service
             string login;
             string password;
             Login(out login, out password);
-            CrmContext Logincrmcontext= new CrmContext();
-            var quarry =Logincrmcontext.Users.FirstOrDefault(userz => userz.Login.Equals(login) && userz.Password.Equals(password));
-
+            CrmContext Logincrmcontext = new CrmContext();
+            var quarry = Logincrmcontext.Users.FirstOrDefault(userz => userz.Login.Equals(login) && userz.Password.Equals(password));
             if (quarry != null)
             {
                 Console.WriteLine($"{quarry.Name},Logged Sucessfull");

@@ -10,20 +10,21 @@ namespace Hugecrm.Service
 {
     class AdminCommandsDeleteUser:IAdminCommands
     {
+        
         public void CommandsRealization(/*AdminCommandscommon command*/)
         {
             CrmContext Deletingcommand = new CrmContext();
-            Console.WriteLine ("введите логин пользователя , подлежащего удалению");
+            Console.WriteLine("введите логин пользователя , подлежащего удалению");
             string dellogin = Console.ReadLine();
-               var usertodelete = Deletingcommand.Users.FirstOrDefault(qua => qua.Login.Equals(dellogin));
+            var usertodelete = Deletingcommand.Users.FirstOrDefault(qua => qua.Login.Equals(dellogin));
             if (usertodelete != null)
             {
                 Deletingcommand.Users.Remove(usertodelete);
                 Deletingcommand.SaveChanges();
             }
             else Console.WriteLine("такого логина не существует");
-            
-       
+
+
         }
 
 

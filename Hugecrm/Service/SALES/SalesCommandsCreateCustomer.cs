@@ -8,7 +8,7 @@ namespace Hugecrm.Service
 {
     class SalesCommandsCreateCustomer:ISalesCommands
     {
-        public void CommandsRealization(/*SalesCommandscommon command*/)
+        public void CommandsRealization()
         {
             CrmContext creatingcustomer = new CrmContext();
             Console.WriteLine("введите имя");
@@ -20,10 +20,10 @@ namespace Hugecrm.Service
             Console.WriteLine("введите адрес расположения");
            string address= Console.ReadLine();
             Console.WriteLine("введите marketorganization");
-           string marketorganization= Console.ReadLine();
+            int salsId = OrgSystem.saveusrsales[0].Id;
+                string salsMO = OrgSystem.saveusrsales[0].MO;
 
-
-            Customer cust = new Customer(name, email, phone,address,marketorganization);
+             Customer cust = new Customer(salsId,name, email, phone,address,salsMO);
             creatingcustomer.Customers.Add(cust);
             creatingcustomer.SaveChanges();
 

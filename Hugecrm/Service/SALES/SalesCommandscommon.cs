@@ -42,6 +42,7 @@ namespace Hugecrm.Service.SALES
             {
                 if (command == key)
                 {
+                    
                     salesdic[key].CommandsRealization();            
                 }
 

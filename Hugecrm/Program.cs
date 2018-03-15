@@ -11,18 +11,25 @@ using Hugecrm.Service;
 
 namespace Hugecrm
 {
- 
+
     class Program
     {
-            
+
         static void Main(string[] args)
         {
+            //User AM = new User("admin", "upppr", "Admin", "123");
+            //CrmContext test = new CrmContext();
+            ////string str = "tyty";
+            ////var quArry = test.Orders.FirstOrDefault(u => u.Id.Equals(str));
+            //test.Users.Add(AM);
+            //test.SaveChanges();
             bool condition = true;
 
             ICommandLineInterface CLI;
-
+            
             LoginService Ls = new LoginService();
             User Usr = Ls.LogIndatabase();
+            
             Console.ReadKey();
             if (Usr != null)
             {
@@ -43,8 +50,12 @@ namespace Hugecrm
                     Console.WriteLine("системная ошибка, обратитесь к администратору");
                     CLI = null;
                 }
-                if (CLI != null) CLI.Dictfilling();
-
+                if (CLI != null)
+                {
+                    CLI.Dictfilling();
+                }
+                Sale saveid = (Sale)Usr;
+                OrgSystem.saveusrsales.Add(saveid);
                 do
                 {
 
@@ -57,10 +68,17 @@ namespace Hugecrm
                 }
                 while (condition);
             }
-
+            else Console.WriteLine("...");
             string task = "Заказчик вводит регионы.Каждый кастомер принадлежит какому то региону.Регионы заводит админ, Сотрудник(сейл) принадлежит к региону," +
                 "Добавляемые им кастомеры принадлежат региону сотрудника.Запросы аналитика теперь меняются таким образом - либо глобальные, либо по региону";
+            string bugstrac= "количество известных ошибок = 0";
+            string bugs = "/*ошибка 1 - поиск комманд и продуктов для удаления в Сэйл коммандс идет по айди, а везде используется GUID */ FIXED, ошибка 2 ==" +
+             "/*при двойном подряд создании юзера Админом выдается ошибка неуникального словаря Админа*/ FIXED";
+            
             Console.WriteLine(task);
+            Console.WriteLine(bugstrac);
+            Console.WriteLine(bugs);
+
             Console.ReadKey();
         }
     }

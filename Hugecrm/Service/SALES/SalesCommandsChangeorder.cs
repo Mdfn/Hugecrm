@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Hugecrm.Data;
 namespace Hugecrm.Service.SALES
 {
-    class SalesCommandsChangeorder:ISalesCommands
+    class SalesCommandsChangeorder : ISalesCommands
     {
         public void CommandsRealization()
         {

@@ -8,10 +8,13 @@ namespace Hugecrm.Service
 {
     class AdmincommandsCreateRegion:IAdminCommands
     {
+       
         public void CommandsRealization()
         {
-            CrmContext creatingregion = new CrmContext();
+             
             Region createdreg = new Region();
+
+            CrmContext creatingregion = new CrmContext();
             Console.WriteLine("введите название создаваемого региона");
             createdreg.Name = Console.ReadLine();
             creatingregion.Regions.Add(createdreg);

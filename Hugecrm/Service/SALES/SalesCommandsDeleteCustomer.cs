@@ -8,7 +8,7 @@ namespace Hugecrm.Service
 {
     class SalesCommandsDeleteCustomer:ISalesCommands
     {
-        public void CommandsRealization(/*SalesCommandscommon command*/)
+        public void CommandsRealization()
         {
             CrmContext DeletingCustomer = new CrmContext();
             Console.WriteLine("введите Id удаляемого клиента");

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Hugecrm.Data
 {
-    public class CrmContext:DbContext
+    public class CrmContext : DbContext
     {
         public CrmContext() : base("Crmconnectionstring")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CrmContext,CrmContextConfiguration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CrmContext, CrmContextConfiguration>());
         }
 
         public DbSet<User> Users { get; set; }
@@ -20,6 +20,20 @@ namespace Hugecrm.Data
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<Region> Regions { get; set; }
-
+        //public DbSet<Sale> Sales { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>()
+        //    .Map(m =>
+        //    {
+        //        m.MapInheritedProperties();
+        //        m.ToTable("Users");
+        //    });
+        //    modelBuilder.Entity<Sale>().Map(m =>
+        //    {
+        //        m.MapInheritedProperties();
+        //        m.ToTable("Sales");
+        //    });
+        //}
     }
 }

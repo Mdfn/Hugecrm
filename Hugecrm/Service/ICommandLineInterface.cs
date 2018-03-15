@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hugecrm.Service
 {
-    interface ICommandLineInterface
+   public interface ICommandLineInterface
     {
         void PrintCommands();
         void ExecuteCommands(string command);

@@ -42,7 +42,11 @@ namespace Hugecrm.Service
             {
                 if (command == key)
                 {
+
+                  
                         admindic[key].CommandsRealization();
+
+                    
                 }
             }
 

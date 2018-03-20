@@ -20,10 +20,11 @@ namespace Hugecrm.Service
             Console.WriteLine("введите адрес расположения");
            string address= Console.ReadLine();
             Console.WriteLine("введите marketorganization");
-            int salsId = OrgSystem.saveusrsales[0].Id;
-                string salsMO = OrgSystem.saveusrsales[0].MO;
+            
+          //int salsId = OrgSystem.saveusrsales[OrgSystem.saveusrsales.Count-1].Id;
+          int salsMO = OrgSystem.saveusrsales[OrgSystem.saveusrsales.Count - 1].MO;
 
-             Customer cust = new Customer(salsId,name, email, phone,address,salsMO);
+            Customer cust = new Customer(/*salsId,*/name, email, phone, address, salsMO);
             creatingcustomer.Customers.Add(cust);
             creatingcustomer.SaveChanges();
 

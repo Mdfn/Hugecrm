@@ -18,10 +18,23 @@ namespace Hugecrm
         static void Main(string[] args)
         {
             //User AM = new User("admin", "upppr", "Admin", "123");
+            //Product p = new Product("oil", 10);
+            //Product y = new Product("gas", 100);
+            //Customer c = new Customer("nm", "a@b", 920, "addr", 1);
+            //Customer c1 = new Customer("im", "b@b", 921, "addr2", 1);
+            //Customer c2 = new Customer("yam", "c@b", 922, "addr3", 1);
+            //Region msk = new Region("Moskow");
             //CrmContext test = new CrmContext();
-            ////string str = "tyty";
-            ////var quArry = test.Orders.FirstOrDefault(u => u.Id.Equals(str));
+            
+            //////string str = "tyty";
+            //////var quArry = test.Orders.FirstOrDefault(u => u.Id.Equals(str));
             //test.Users.Add(AM);
+            //test.Products.Add(p);
+            //test.Products.Add(y);
+            //test.Customers.Add(c);
+            //test.Customers.Add(c1);
+            //test.Customers.Add(c2);
+
             //test.SaveChanges();
             bool condition = true;
 
@@ -54,8 +67,11 @@ namespace Hugecrm
                 {
                     CLI.Dictfilling();
                 }
-                Sale saveid = (Sale)Usr;
-                OrgSystem.saveusrsales.Add(saveid);
+                if (Usr.Root == "sales")
+                {
+                    Sale saveid = (Sale)Usr;
+                    OrgSystem.saveusrsales.Add(saveid);
+                }
                 do
                 {
 

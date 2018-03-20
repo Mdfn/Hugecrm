@@ -11,6 +11,19 @@ namespace Hugecrm.Service
     {
         Dictionary<string, IAnalystCommands> analdic = new Dictionary<string, IAnalystCommands>();
         Dictionary<string, string> description = new Dictionary<string, string>();
+        //public void ShowResult(IQueryable query)
+
+        //{
+        //    if (query != null)
+        //    {
+        //        foreach (var qq in query)
+
+        //        {
+        //            Console.WriteLine($"{qq.CustomerId}==amount=={qq.Profit}");
+        //        }
+        //    }
+        //    else Console.WriteLine("нет данных удовлетворяющих запросу");
+        //}
         public void PrintCommands()
         {
 

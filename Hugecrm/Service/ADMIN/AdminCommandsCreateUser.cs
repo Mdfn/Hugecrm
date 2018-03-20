@@ -49,7 +49,7 @@ namespace Hugecrm.Service
             else
             {
                 Console.WriteLine("введите регион пользователя");
-                string _MO = Console.ReadLine();
+                int _MO = Convert.ToInt32(Console.ReadLine());
                 Sale usr = new Sale(root, _MO, name, login, password);
                 CrmCreateUserContext.Users.Add(usr);
                 CrmCreateUserContext.SaveChanges();

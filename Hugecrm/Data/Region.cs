@@ -11,5 +11,9 @@ namespace Hugecrm.Data
         public Int32 Id { get; set; }
         public string Name { get; set; }
 
+        public Region(string name)
+        {
+            Name = name;
+        }
     }
 }

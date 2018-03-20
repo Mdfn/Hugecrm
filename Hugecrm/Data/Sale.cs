@@ -8,8 +8,8 @@ namespace Hugecrm.Data
 {
     public class Sale : User
     {
-        public string MO { get; set; }
-        public Sale(string root,string _MO, string name, string login, string password)
+        public int MO { get; set; }
+        public Sale(string root,int _MO, string name, string login, string password)
         {
             Root = root;
             MO= _MO;

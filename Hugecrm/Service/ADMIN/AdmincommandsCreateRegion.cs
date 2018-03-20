@@ -11,12 +11,13 @@ namespace Hugecrm.Service
        
         public void CommandsRealization()
         {
-             
-            Region createdreg = new Region();
+            Console.WriteLine("введите название создаваемого региона");
+
+            string createdreg_nm = Console.ReadLine();
+
+            Region createdreg = new Region(createdreg_nm);
 
             CrmContext creatingregion = new CrmContext();
-            Console.WriteLine("введите название создаваемого региона");
-            createdreg.Name = Console.ReadLine();
             creatingregion.Regions.Add(createdreg);
             creatingregion.SaveChanges();
         }

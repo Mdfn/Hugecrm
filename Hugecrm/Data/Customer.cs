@@ -8,22 +8,22 @@ namespace Hugecrm.Data
 {
     public class Customer
     {
-        public int SalesId { get;set;}
+        //public int SalesId { get;set;}
         public Int32 Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }                                   
         public Int32 Phone { get; set; }
         public string Address { get; set; }
-        public string MarketOrganization { get; set; }
+        public int MO_Id { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        public Customer(int salesId,string name, string email, Int32 phone,string address,string marketorganization)
+        public Customer(string name, string email, Int32 phone,string address,int marketorganization_Id)
         {
-            SalesId = salesId;
+            //SalesId = salesId;
             Name = name;
             Email = email;
             Phone = phone;
             Address = address;
-            MarketOrganization = marketorganization;
+            MO_Id= marketorganization_Id;
         }
         public Customer()
         { }
